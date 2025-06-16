@@ -4,16 +4,24 @@ import { useEffect, useState } from 'react';
 import { db } from '@/lib/firebase';
 import { doc, getDoc } from 'firebase/firestore';
 import { useParams } from 'next/navigation';
+import Image from 'next/image';
+
+type Article = {
+  title: string;
+  content: string;
+  fileUrl?: string;
+  author: string;
+};
 
 export default function ArticlePage() {
   const { id } = useParams();
-  const [article, setArticle] = useState<any>(null);
+  const [article, setArticle] = useState<Article | null>(null);
 
   useEffect(() => {
     const fetchArticle = async () => {
       const docRef = doc(db, 'articles', id as string);
       const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) setArticle(docSnap.data());
+      if (docSnap.exists()) setArticle(docSnap.data() as Article);
     };
     fetchArticle();
   }, [id]);
@@ -31,10 +39,18 @@ export default function ArticlePage() {
           {article.fileUrl.endsWith('.pdf') ? (
             <iframe src={article.fileUrl} width="100%" height="400px" />
           ) : (
-            <img src={article.fileUrl} alt="Pièce jointe" style={{ maxWidth: '100%' }} />
+            <Image
+              src={article.fileUrl}
+              alt="Pièce jointe"
+              width={600}
+              height={400}
+              style={{ maxWidth: '100%', height: 'auto' }}
+            />
           )}
           <p>
-            <a href={article.fileUrl} target="_blank" rel="noopener noreferrer">🔗 Ouvrir dans un nouvel onglet</a>
+            <a href={article.fileUrl} target="_blank" rel="noopener noreferrer">
+              🔗 Ouvrir dans un nouvel onglet
+            </a>
           </p>
         </div>
       )}

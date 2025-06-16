@@ -12,13 +12,22 @@ import {
   query,
   serverTimestamp
 } from 'firebase/firestore';
+import { User } from 'firebase/auth';
 import styles from './Blog.module.css';
 
+type Article = {
+  id: string;
+  title: string;
+  content: string;
+  fileUrl?: string;
+  author: string;
+};
+
 export default function BlogPage() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [articles, setArticles] = useState<any[]>([]);
+  const [articles, setArticles] = useState<Article[]>([]);
   const [message, setMessage] = useState('');
   const [file, setFile] = useState<File | null>(null);
   const router = useRouter();
@@ -37,7 +46,7 @@ export default function BlogPage() {
       const data = snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data()
-      }));
+      })) as Article[];
       setArticles(data);
     });
     return () => unsub();
@@ -46,7 +55,7 @@ export default function BlogPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      let fileUrl = null;
+      let fileUrl: string | null = null;
 
       if (file) {
         const uniqueName = `${Date.now()}-${file.name}`;
@@ -59,7 +68,7 @@ export default function BlogPage() {
         title,
         content,
         fileUrl,
-        author: user.displayName || user.email,
+        author: user?.displayName || user?.email || 'Anonyme',
         createdAt: serverTimestamp(),
       });
 
@@ -67,7 +76,7 @@ export default function BlogPage() {
       setContent('');
       setFile(null);
       setMessage('✅ Article publié !');
-    } catch (err) {
+    } catch {
       setMessage("❌ Erreur lors de l'ajout.");
     }
   };
@@ -110,25 +119,25 @@ export default function BlogPage() {
 
       <h2>Articles publiés</h2>
       {articles.map((article) => (
-  <div
-    key={article.id}
-    onClick={() => router.push(`/blog/${article.id}`)}
-    style={{
-      marginBottom: 16,
-      padding: 12,
-      border: '1px solid #ccc',
-      borderRadius: 8,
-      cursor: 'pointer',
-      backgroundColor: '#f9f9f9'
-    }}
-  >
-    <h3>{article.title}</h3>
-    <p style={{ color: '#555' }}>
-      {article.content.length > 200 ? article.content.slice(0, 200) + '...' : article.content}
-    </p>
-    <p style={{ fontSize: '0.9rem', color: '#888' }}>Par {article.author}</p>
-  </div>
-))}
+        <div
+          key={article.id}
+          onClick={() => router.push(`/blog/${article.id}`)}
+          style={{
+            marginBottom: 16,
+            padding: 12,
+            border: '1px solid #ccc',
+            borderRadius: 8,
+            cursor: 'pointer',
+            backgroundColor: '#f9f9f9'
+          }}
+        >
+          <h3>{article.title}</h3>
+          <p style={{ color: '#555' }}>
+            {article.content.length > 200 ? article.content.slice(0, 200) + '...' : article.content}
+          </p>
+          <p style={{ fontSize: '0.9rem', color: '#888' }}>Par {article.author}</p>
+        </div>
+      ))}
     </div>
   );
 }
