@@ -50,6 +50,13 @@
     margin-bottom: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #fff;
+    color: #333; /* ✅ Texte lisible */
+    font-size: 16px;
+  }
+  
+  .input::placeholder {
+    color: #888;
   }
   
   .button {
@@ -113,3 +120,30 @@
     display: block;
   }
     
+  .toggle {
+    margin-top: 0.5rem;
+    background: transparent;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  @keyframes wiggle {
+    0%   { transform: rotate(0deg) translateY(0); }
+    10%  { transform: rotate(2deg) translateY(-1px); }
+    20%  { transform: rotate(4deg) translateY(-2px); }
+    30%  { transform: rotate(2deg) translateY(-1px); }
+    40%  { transform: rotate(0deg) translateY(0); }
+    50%  { transform: rotate(-2deg) translateY(1px); }
+    60%  { transform: rotate(-4deg) translateY(2px); }
+    70%  { transform: rotate(-2deg) translateY(1px); }
+    80%  { transform: rotate(0deg) translateY(0); }
+    90%  { transform: rotate(2deg) translateY(-1px); }
+    100% { transform: rotate(0deg) translateY(0); }
+  }
+
+  .wiggle {
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  

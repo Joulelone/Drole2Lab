@@ -1,0 +1,20 @@
+.container {
+    padding: 2rem;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  .backButton {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #4f4f4f;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .backButton:hover {
+    background-color: #d4d4d4;
+  }
+  

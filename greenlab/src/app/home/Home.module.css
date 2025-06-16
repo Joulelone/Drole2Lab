@@ -1,0 +1,36 @@
+.container {
+    text-align: center;
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .userInfo {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .logoutButton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .blogButton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
