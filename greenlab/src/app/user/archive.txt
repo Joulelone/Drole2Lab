@@ -1,0 +1,489 @@
+// pages/index.js
+"use client"
+import Head from "next/head";
+export default function Home() {
+  return (
+    <div >
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Truculenta&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
+
+      
+      <header className="relative bg-white h-[982px] text-center mx-auto"> 
+        {/* Décorations SVG */}
+        <img
+          src="/shapes/orange-dot.svg"
+          alt="orange dot"
+          className="decor decor1"
+          
+        />
+        <img
+          src="/shapes/green-triangle.svg"
+          alt="green triangle"
+          className="decor decor3"
+          width={60}
+          height={60}
+        />
+        <img
+          src="/shapes/blue-square.svg"
+          alt="blue square"
+          className="decor decor4"
+          
+        />
+
+        <img
+          src="/shapes/red-circle.svg"
+          alt="blue square"
+          className="decor decor6"
+          width={40}
+          height={40}
+        />
+        <img
+          src="/shapes/yellow-square.svg"
+          alt="yellow square"
+          className="decor decor5"
+          width={40}
+          height={40}
+        />
+        {/* Logo & Titre */}
+        <div className="logo">
+          <img
+            src="/logo-drole2lab.svg"
+            alt="Logo Drôle2Lab"
+            className="w-[106px] h-[175.17px] absolute top-[161px] left-[703px] z-10"
+           
+          />
+        </div>
+        <div className="slogan">Bricolo, Recyclo, Rigolo</div>
+        <div className="titleBar" />
+        <div className="subtitle" />
+        <div className="subtitle2" />
+
+        <div className="box-wrapper">
+          <div className="subtitle3" />
+          <div className="subtitle4" />
+        </div>
+
+
+
+      </header>
+
+      {/* Section Hero */}
+      <section className="heroSection">
+        <div className="heroTitle" />
+        <div className="heroBar" />
+
+        <div className="heroSubtitle1" />
+        <div className="heroSubtitle2" />
+        <div className="heroContent">
+          <div className="heroCard" />
+          <div className="heroSideCard" />
+        </div>
+      </section>
+
+      {/* Section Cartes 1 */}
+      <section className="cardsSection1">
+        <div className="cardsTitle" />
+        <div className="cardsBar" />
+        <div className="cardsGrid">
+          <div className="card1" />
+          <div className="card2" />
+          <div className="card3" />
+        </div>
+        <div className="cardsGrid">
+          <div className="card4" />
+          <div className="card5" />
+          <div className="card6" />
+        </div>
+      </section>
+
+      {/* Bloc couleur */}
+      <section className="colorSection" />
+
+      {/* Section Cartes 2 */}
+      <section className="cardsSection2">
+        <div className="cards2Title" />
+        <div className="cards2Bar" />
+        <div className="cards2Grid">
+          <div className="card21" />
+          <div className="card22" />
+          <div className="card23" />
+        </div>
+      </section>
+
+      <style jsx>{`
+       .container {
+  background: #fff;
+
+  justify-content: center; /* centre horizontalement */
+  align-items: center;     /* centre verticalement */
+  text-align: center;
+}
+
+        /* header {
+          position: relative;
+          background: #fff;
+          height: 982px;
+          text-align: center;
+          margin: auto; 
+        } */
+        .logo {
+          margin-top: 40px;
+        }
+        /* .logo-main {
+          width:106px;
+          height: 175.17px;
+          top:161px;
+          left:703px;
+          position: absolute;
+          z-index: 1;
+        } */
+        .lab {
+          font-size: 28px;
+          font-weight: bold;
+          color: #ff7800;
+          letter-spacing: 0.1em;
+          text-shadow: 1px 1px 0 #000, 2px 2px 0 #69b6ff, 0 2px 0 #00cb69;
+        }
+        .slogan {
+        position: absolute;
+        top:361px;
+        left:484px;
+        width: 547px;
+        height:84px;
+        font-weight: 800;
+        font-size:60.1px;
+          font-family: Truculenta;
+          background:  #D9D9D9;          
+          letter-spacing: 5px;
+          line-height: 100%;
+          
+        }
+        .titleBar {
+          width: 551px;
+          position: absolute;
+    height: 71px;
+    top:463px;
+    left:480px;
+          background: #D9D9D9;
+          border-radius: 2px;
+        }
+        .subtitle{
+        position: absolute;
+          width: 400px;
+          height: 16px;
+          top:558px;
+          left:556px;
+          background: #D9D9D9;
+          
+        }
+
+        .subtitle2 {
+                position: absolute;
+
+          width: 400px;
+          height: 16px;
+          top:586px;
+          left:556px;
+          background: #D9D9D9;
+        }
+
+        .box-wrapper {
+                  position: absolute;
+
+  display: flex;
+  justify-content: center; /* Centré horizontalement */
+  gap: 30px;               /* Espace entre les blocs */
+  top:705px;
+  left:560px;
+}
+
+.subtitle3,
+.subtitle4 {
+  width: 177px;
+  height: 50px;
+  
+  background: #e2e2e2;
+}
+
+        
+        /* Décorations */
+        .decor {
+          position: absolute;
+          z-index: 1;
+        }
+        .decor1 { top: 52px; left: 374px; width:108.74px;height:108.74px}
+        .decor2 { top: 80px; left: 10px; }
+        .decor3 { top: 730.24px; left: 1170px; width: 338.65px; height: 338.65px;  transform: rotate(20.98 deg);}
+        .decor4 { top: 321.98px; left: 62.23px; width:87.29px, height:87.29px}
+        .decor6 { top: 784px; left: 428px; width: 43.66px; height: 43.66px;  transform: rotate(5deg);}
+        .decor5 { top: 66px; left: 1341.62px; width:87.29px; height:87.29px }
+
+        /* Hero Section */
+        .heroSection {
+          background: #ffeed8;
+          padding: 32px 0 56px;
+          text-align: center;
+          height:1379px;
+        }
+        .heroTitle {
+          width: 87px;
+          height: 87px;
+          background: #dadada;
+          margin: 0 auto 10px;
+          border-radius: 2px;
+              top: 1046px;
+    left: 712px;
+    position: absolute;
+        }
+        .heroBar {
+          width: 551px;
+          height: 71px;
+          top:1171px;
+          left:480px;
+          background:#dadada;
+          margin: 0 auto 8px;
+          border-radius: 2px;
+          position: absolute;
+        }
+        .heroSubtitle1 {
+          width: 400px;
+          height: 16px;
+          top:1294px;
+          left:556px;
+          background:#dadada;
+          
+          position: absolute;
+        }
+
+        .heroSubtitle2 {
+          width: 400px;
+          height: 16px;
+          top:1322px;
+          left:556px;
+          background:#dadada;
+          
+          position: absolute;
+        }
+        .heroContent {
+          margin: 32px auto 0;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 18px;
+          max-width: 430px;
+        }
+        .heroCard {
+          width: 1034px;
+          height: 655px;
+          top:1443px;
+          left:180px;
+          background: #fff;
+          border: 3px solid #000;
+          border-radius: 8px;
+          box-shadow: 3px 3px 0 #000;
+           position: absolute;
+        }
+        .heroSideCard {
+          width: 285px;
+          height: 467px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 8px;
+          box-shadow: 2px 2px 0 #000;
+           position: absolute;
+           top:1552px;
+          left:1047px;
+          
+        }
+
+        /* Section Cartes 1 */
+        .cardsSection1 {
+          background: #dbf7aa;
+          padding: 32px 0 32px;
+          text-align: center;
+          height:1317px;
+        }
+        .cardsTitle {
+          width: 551px;
+          height: 71px;
+          top:2404px;
+          left:480px;
+          background: #dadada;
+          margin: 0 auto 6px;
+          border-radius: 2px;
+          position: absolute;
+        }
+        .cardsBar {
+          width: 400px;
+          height: 16px;
+          background: #e2e2e2;
+          position: absolute;
+          top:2527px;
+          left:556px;
+        }
+        .cardsGrid {
+          display: flex;
+          justify-content: center;
+          gap: 24px;
+          margin-bottom: 24px;
+        }
+        .card1 {
+          width: 285px;
+          height: 467px;
+          top:2647px;
+          left:223px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+           position: absolute;
+        }
+           .card2 {
+          width: 285px;
+          height: 467px;
+          top:2647px;
+          left:635px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+           position: absolute;
+        }
+
+         .card3 {
+          width: 285px;
+          height: 467px;
+          top:2647px;
+          left:1047px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+           position: absolute;
+        }
+
+        .card4 {
+          width: 285px;
+          height: 467px;
+          top:3194px;
+          left:223px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+           position: absolute;
+        }
+
+        .card5 {
+          width: 285px;
+          height: 467px;
+          top:3194px;
+          left:635px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+           position: absolute;
+        }
+
+        .card6 {
+          width: 285px;
+          height: 467px;
+          top:3194px;
+          left:1047px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+           position: absolute;
+        }
+
+        /* Bloc couleur */
+        .colorSection {
+          background: #a0b4fa;
+          height: 1317px;
+        }
+
+        /* Section Cartes 2 */
+        .cardsSection2 {
+          padding: 32px 0;
+          text-align: center;
+          height: 1317px;
+        }
+        .cards2Title {
+          width: 610px;
+          height: 88px;
+          background: #dadada;
+          border-radius: 2px;
+          top:5045px;
+          left:451px;
+          position: absolute;
+        }
+        .cards2Bar {
+          width: 333px;
+          height: 88px;
+          background: #dadada;
+          border-radius: 2px;
+           top:5171px;
+          left:589px;
+          position: absolute;
+        }
+        .cards2Grid {
+          display: flex;
+          justify-content: center;
+          gap: 32px;
+          margin-top: 16px;
+        }
+        .card21 {
+          width: 313px;
+          height: 474px;
+          top:5399px;
+          left:207px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+          position: absolute;
+        }
+
+        .card22 {
+          width: 313px;
+          height: 474px;
+          top:5399px;
+          left:599px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+          position: absolute;
+        }
+
+        .card23 {
+          width: 313px;
+          height: 474px;
+          top:5399px;
+          left:991px;
+          background: #fff;
+          border: 2px solid #000;
+          border-radius: 6px;
+          position: absolute;
+        }
+
+        @media (max-width: 600px) {
+          .heroContent {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+          }
+          .heroCard {
+            width: 90vw;
+            max-width: 340px;
+          }
+          .heroSideCard {
+            margin-bottom: 0;
+          }
+          .cardsGrid, .cards2Grid {
+            gap: 10px;
+            flex-direction: row;
+          }
+        }
+      `}</style>
+    </div>
+  );
+}
