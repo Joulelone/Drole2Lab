@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-<<<<<<< HEAD
-  /* config options here */
-=======
   async redirects() {
     return [
       {
@@ -13,7 +10,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
->>>>>>> f0749c8 (Premier commit — ajout des fichiers du projet)
 };
 
 export default nextConfig;
