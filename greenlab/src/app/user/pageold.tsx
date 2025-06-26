@@ -1,39 +1,31 @@
-// pages/index.js
-import Head from "next/head";
+"use client";
+
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
-      <Head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Truculenta&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
 
       {/* Header */}
       <header className="h-[1317px] relative bg-white py-12 flex flex-col items-center">
         {/* Décorations SVG */}
-        <img src="/shapes/orange-dot.svg" alt="" className="absolute left-[10] w-[56px] h-[92px]" />
-        <img src="/shapes/yellow-square.svg" alt="" className="absolute left-[260] w-[60px] h-[99px]" />
-        <img src="/shapes/blue-square.svg" alt="" className="absolute left-0 top-316 w-[50px]" />
-        <img src="/shapes/green-triangle.svg" alt="" className="absolute right-0 bottom-0 w-[120px]" />
-        <img src="/shapes/red-circle.svg" alt="" className="absolute left-1/2 top-1/2 w-[30px] -translate-x-1/2" />
+        <Image src="/shapes/orange-dot.svg" alt="" width={56} height={92} className="absolute left-[10]" />
+        <Image src="/shapes/yellow-square.svg" alt="" width={60} height={99} className="absolute left-[260]" />
+        <Image src="/shapes/blue-square.svg" alt="" width={50} height={50} className="absolute left-0 top-316" />
+        <Image src="/shapes/green-triangle.svg" alt="" width={120} height={120} className="absolute right-0 bottom-0" />
+        <Image src="/shapes/red-circle.svg" alt="" width={30} height={30} className="absolute left-1/2 top-1/2 -translate-x-1/2" />
 
         {/* Logo & Titre */}
-        <img src="/logo-drole2lab.svg" className="absolute w-[49px] h-[67.6px] top-[50px] left-[172px]" />
+        <Image src="/logo-drole2lab.svg" alt="Logo Drôle2Lab" width={49} height={67.6} className="absolute top-[50px] left-[172px]" />
         <div className="font-black leading-[70px] absolute top-[155px] left-[29px] text-[74.59px] font-truculenta">
-  Bricolo Recyclo Rigolo
-</div>
+          Bricolo Recyclo Rigolo
+        </div>
 
         <div className="absolute w-[350px] text-[16] h-[71px] top-[440px] left-[20px]">
           <a href="#">
             Des tutos <span className="underline">pour la famille</span>, à la maison et <span className="underline">pour la nature</span>.
           </a>
         </div>
-
-       {/*  <div className="w-[280px] h-[16px] bg-[#D9D9D9]  mb-2 mx-auto" />
-        <div className="w-[280px] h-[16px] bg-[#D9D9D9]  mb-4 mx-auto" /> */}
 
         <div className="flex justify-center gap-4 mt-4">
           <div className="w-[177px] h-[50px] bg-[#e2e200] absolute top-[705px] left-[560px]" />
