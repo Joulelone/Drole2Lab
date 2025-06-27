@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
+import Header from '@/components/Header'
 
 export default function Activite1() {
   const materiel = [
@@ -45,38 +45,7 @@ export default function Activite1() {
   return (
     <div className="flex flex-col min-h-screen bg-[#FFF2E9] text-black font-sans">
       {/* Header */}
-      <header className="w-full bg-[#E4F7B8] py-6 px-4 lg:px-24 flex justify-between items-center">
-        <Image src="/shapes/Frame 100.png" alt="Logo" width={52} height={38} />
-
-        {/* Desktop nav */}
-        <nav className="hidden lg:flex gap-6 font-semibold text-black">
-          <Link href="/">Accueil</Link>
-          <Link href="/activites">Activités</Link>
-          <Link href="/calendrier">Calendrier</Link>
-          <Link href="/blog">Blog</Link>
-          <Link href="/profil">Profil</Link>
-        </nav>
-
-        {/* Mobile burger */}
-        <div className="lg:hidden">
-          <div className="w-6 h-5 flex flex-col justify-between cursor-pointer group">
-            <span className="block h-0.5 bg-black"></span>
-            <span className="block h-0.5 bg-black"></span>
-            <span className="block h-0.5 bg-black"></span>
-          </div>
-        </div>
-
-        {/* Desktop actions */}
-        <div className="hidden lg:flex gap-2">
-            <Link href="/login">
-                <button className="border border-black px-4 py-1 rounded-full text-black cursor-pointer hover:translate-y-1">Se connecter</button>
-            </Link>
-            <Link href="/signup">
-                <button className="bg-[#9BAEF6] text-white px-4 py-1 rounded-full cursor-pointer hover:translate-y-1">S&apos;inscrire</button>
-            </Link>
-        </div>
-      </header>
-
+      <Header />
       {/* MAIN */}
       <main className="flex-1">
         <div className="max-w-5xl mx-auto px-4 py-12">
