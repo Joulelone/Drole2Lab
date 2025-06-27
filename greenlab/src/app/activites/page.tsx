@@ -85,7 +85,7 @@ export default function Home() {
 
         {/* Vignettes d'activités */}
         <section className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {[1, 2, 3].map((i) => (
+          {[1, 2, 3, 4, 5, 6].map((i) => (
             <div key={i} className="bg-white rounded-xl overflow-hidden shadow-lg">
               <Image
                 src="/shapes/image1.png"

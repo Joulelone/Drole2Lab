@@ -131,7 +131,7 @@ export default function CalendrierPage() {
 
         {/* Témoignages */}
         <section className="mt-10">
-          <h3 className="text-xl font-bold mb-6">Ce qu’en disent les parents</h3>
+          <h3 className="text-xl font-bold mb-6 text-black">Ce qu’en disent les parents</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-[#D4F5B2] text-[#2D2D2D] p-6 rounded-lg">
               <p>🌿 Grâce au calendrier, j’ai enfin trouvé un moyen simple d’éveiller ma fille à l’écologie. Elle réclame maintenant les balades du dimanche !</p>

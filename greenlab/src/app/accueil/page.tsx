@@ -89,7 +89,7 @@ export default function ActivitesPage() {
           </div>
           <div className="mt-8 flex justify-center">
             <Link href="/calendrier">
-              <button className="bg-[#C3D9FF] text-[#0E0E0E] border border-[#0E0E0E] px-6 py-2 rounded-full font-semibold hover:bg-blue-200">
+              <button className="bg-[#C3D9FF] text-[#0E0E0E] border border-[#0E0E0E] px-6 py-2 rounded-full font-semibold cursor-pointer hover:translate-y-1 transition-transform">
                 Je découvre le calendrier
               </button>
             </Link>
