@@ -1,134 +1,127 @@
-import Link from 'next/link';
-import Image from 'next/image';
+'use client'
 
-export default function Home() {
-    return (
-        <div className="min-h-screen bg-[#FFF2E9] relative">
+import Image from 'next/image'
+import Link from 'next/link'
 
-            {/* Header */}
-            <header className="absolute w-[380px] h-[150px] bg-[#FFF2E9] z-50">
-                <Image
-                    src="/shapes/Frame 100.png"
-                    alt=""
-                    width={52}
-                    height={38}
-                    className="absolute left-[22px] top-[66px]"
-                />
+export default function ActivitesPage() {
+  return (
+    <div className="min-h-screen bg-[#FFF2E9] font-montserrat flex flex-col">
+      {/* Header */}
+      <header className="w-full bg-[#E4F7B8] py-6 px-4 lg:px-24 flex justify-between items-center">
+        <Image src="/shapes/Frame 100.png" alt="Logo" width={52} height={38} />
 
-                <nav className="absolute left-[340px] top-[71px]">
-                    <div className="w-6 h-5 flex flex-col justify-between cursor-pointer group">
-                        <span className="block h-0.5 bg-black transition-all duration-300 group-hover:scale-x-110"></span>
-                        <span className="block h-0.5 bg-black transition-all duration-300 group-hover:scale-x-110"></span>
-                        <span className="block h-0.5 bg-black transition-all duration-300 group-hover:scale-x-110"></span>
-                    </div>
-                </nav>
+        {/* Desktop nav */}
+        <nav className="hidden lg:flex gap-6 font-semibold text-black">
+          <Link href="/">Accueil</Link>
+          <Link href="/activites">Activités</Link>
+          <Link href="/calendrier">Calendrier</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/profil">Profil</Link>
+        </nav>
 
-                <div className="absolute h-px w-[453px] bg-[#00000033] top-[125px]" />
-            </header>
-
-            <main className="pt-[160px] px-5">
-                <div className="w-[318px] h-[194px] font-black leading-[100%] text-[36px] font-Montserrat">
-                    Bonjour <br /> quelle activité veux-tu préparer aujourd’hui ?
-                </div>
-
-                <div
-                    className="absolute w-[103px] h-[61.48px] top-[140.47px] left-[180.82px] bg-cover bg-center"
-                    style={{ backgroundImage: 'url("/shapes/Rectangle 6529.png")' }}
-                >
-                    <span
-                        className="absolute font-bold font-Montserrat left-[100.82px] top-[20.47px] text-[36px] leading-[100%] tracking-[-0.015em]"
-                    >
-                        ,
-                    </span>
-                </div>
-
-                {/* Cartes catégories */}
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                    {["Cuisine", "Déco", "Jardinage", "Arts plastiques"].map((item, index) => (
-                        <div
-                            key={index}
-                            tabIndex={0}
-                            className={`w-[172.76px] h-[107.39px] rounded-xl text-center text-black font-bold text-lg py-10 outline-none transition duration-200 focus:border-black focus:shadow-lg border-2 border-transparent ${index === 0 ? "bg-[#9BAEF6]" : index === 1 ? "bg-[#FFC441]" : index === 2 ? "bg-[#D7F2AE]" : "bg-[#FBA7A7]"}`}
-                        >
-                            {item}
-                        </div>
-                    ))}
-                </div>
-
-                {/* Choix âge + barre de recherche */}
-                <div className="bg-[#FDF0E6] p-3 rounded-lg w-[353px] font-[Montserrat] mt-6">
-                    <p className="font-bold mb-3">Mes enfants ont :</p>
-                    <div className="flex justify-between p-1 rounded-full border border-gray-200 mb-4">
-                        {["4–6 ans", "6–10 ans", "10–14 ans"].map((age, idx) => (
-                            <label key={idx} className="w-full text-center cursor-pointer">
-                                <input type="radio" name="age" className="hidden peer" defaultChecked={idx === 0} />
-                                <div className="peer-checked:bg-[#D7F2AE] px-4 py-2 rounded-full text-sm font-medium text-black transition">
-                                    {age}
-                                </div>
-                            </label>
-                        ))}
-                    </div>
-
-                    <input
-                        type="text"
-                        placeholder="Rechercher"
-                        className="w-full px-4 py-2 rounded-xl border border-[#EADCD1] bg-[#FDF0E6] text-sm placeholder-[#D5C7BC] outline-none"
-                    />
-                </div>
-
-                {/* Vignettes d'activités */}
-                {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="max-w-sm mx-auto rounded-lg overflow-hidden shadow-lg mt-8">
-                        <Image
-                            className="w-full h-48 object-cover"
-                            src="/shapes/image1.png"
-                            alt="Jardin"
-                            width={400}
-                            height={200}
-                        />
-                        <div className="p-4">
-                            <h2 className="text-xl font-bold mb-2">Un Jardin tout rond...</h2>
-                            <div className="flex justify-between text-sm text-gray-600 mb-4">
-                                <div className="flex items-center space-x-2">
-                                    <div className="flex items-center bg-[#D7F2AE] py-2 font-medium text-black rounded-full px-4">
-                                        <Image src="/shapes/Group 46.png" alt="Montre" width={16} height={16} className="mr-1" />
-                                        30 min
-                                    </div>
-                                    <span className="bg-[#D7F2AE] py-2 font-medium text-black rounded-full px-4">8 ans</span>
-                                </div>
-                            </div>
-                            <p className="text-gray-700 mb-4">
-                                Vous allez devoir réaliser un potager miniature avec des tubes en carton.
-                                Amusez-vous et découvrez les joies du jardinage en famille.
-                            </p>
-                            <Link href={`/activite${i}`}>
-                                <Image
-                                    className="w-[300px] h-[45px] transition-transform duration-300 transform hover:translate-y-1 cursor-pointer"
-                                    src="/shapes/jemelance.png"
-                                    alt="Je me lance"
-                                    width={300}
-                                    height={45}
-                                />
-                            </Link>
-                        </div>
-                    </div>
-                ))}
-
-                {/* Footer */}
-                <section className="bg-[#99ABF4] w-full h-[300px] mt-16 text-white text-center py-8">
-                    <h2 className="text-2xl font-bold">Contact</h2>
-                    <p>contact@drole2lab.com</p>
-                    <p>07 82 23 77 57</p>
-
-                    <h2 className="text-xl font-semibold mt-5">À propos</h2>
-                    <ul className="mt-2 space-y-1">
-                        <li>Conditions générales</li>
-                        <li>Mentions légales</li>
-                        <li>Gérer mes préférences</li>
-                        <li>Cookies</li>
-                    </ul>
-                </section>
-            </main>
+        {/* Mobile burger */}
+        <div className="lg:hidden">
+          <div className="w-6 h-5 flex flex-col justify-between cursor-pointer group">
+            <span className="block h-0.5 bg-black"></span>
+            <span className="block h-0.5 bg-black"></span>
+            <span className="block h-0.5 bg-black"></span>
+          </div>
         </div>
-    );
+
+        {/* Desktop actions */}
+        <div className="hidden lg:flex gap-2">
+          <Link href="/login">
+            <button className="border border-black px-4 py-1 rounded-full text-black cursor-pointer hover:translate-y-1">
+              Se connecter
+            </button>
+          </Link>
+          <Link href="/signup">
+            <button className="bg-[#9BAEF6] text-white px-4 py-1 rounded-full cursor-pointer hover:translate-y-1">
+              S&apos;inscrire
+            </button>
+          </Link>
+        </div>
+      </header>
+
+      {/* Contenu principal */}
+      <main className="flex-1">
+        {/* Section Intro */}
+        <section className="text-[#2D2D2D] flex flex-col-reverse md:flex-row items-center justify-between gap-12 px-6 md:px-24 mt-10">
+          <div className="max-w-lg w-full">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+              Initiez vos enfants <br />
+              en vous <span className="bg-[#C4F2B4] px-3 py-1 rounded-md">amusant !</span>
+            </h1>
+
+            <p className="mt-6 text-base md:text-lg leading-relaxed">
+              À partir de 4 ans, les enfants imitent les gestes qu’ils observent. Un bon tri, un compost, une activité zéro
+              déchet… c’est déjà intégré !
+              <br /><br />
+              Grâce à notre plateforme gratuite, découvrez des idées DIY écoresponsables à faire ensemble, en famille, avec
+              des objets du quotidien.
+            </p>
+          </div>
+
+          <div className="flex justify-center md:justify-end w-full md:w-auto">
+            <Image
+              src="/activites.svg"
+              alt="Activités"
+              width={520}
+              height={560}
+              className="w-full h-auto"
+            />
+          </div>
+        </section>
+
+        {/* Section Défis */}
+        <section className="mt-16 px-4 md:px-24">
+          <h1 className="text-xl md:text-2xl font-bold text-center text-[#2D2D2D] mb-10">
+            La ville en terrain d’aventure <br /> durable en un guide !
+          </h1>
+          <div className="flex justify-center items-center w-full">
+            <Image
+              src="/ville.svg"
+              alt="Défis en ville"
+              width={900}
+              height={200}
+              className="h-auto"
+            />
+          </div>
+          <div className="mt-8 flex justify-center">
+            <Link href="/calendrier">
+              <button className="bg-[#C3D9FF] text-[#0E0E0E] border border-[#0E0E0E] px-6 py-2 rounded-full font-semibold hover:bg-blue-200">
+                Je découvre le calendrier
+              </button>
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full bg-[#9BAEF6] px-4 lg:px-24 py-10 text-white mt-16">
+        <div className="flex flex-col">
+          {/* Logo et contact */}
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6">
+            <div className="flex flex-col gap-2">
+              <Image src="/logo-drole2lab.svg" alt="Logo" width={100} height={40} />
+            </div>
+            <div className="text-sm">
+              <span>contact@drole2lab.com</span>
+              <span className="ml-4">tel : 07 82 23 77 57</span>
+            </div>
+          </div>
+
+          {/* Ligne de séparation */}
+          <hr className="border-t border-white opacity-30 mb-4" />
+
+          {/* Liens légaux */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-6 text-sm">
+            <span className="cursor-pointer hover:underline">Mentions légales</span>
+            <span className="cursor-pointer hover:underline">Conditions générales</span>
+            <span className="cursor-pointer hover:underline">Cookies</span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
 }
